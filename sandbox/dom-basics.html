@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .class {
+            border: 1px solid #000;
+            margin: 20px;
+            padding: 10px;
+            width: fit-content;
+            float: left;
+        }
+
+        .class-name {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .attributes,
+        .methods {
+            margin-left: 20px;
+        }
+
+        .completion-status {
+            font-style: italic;
+            color: green;
+        }
+
+        .interaction-description {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="class">
+        <div class="class-name">Journal</div>
+        <div class="attributes">
+            - entries: List&lt;Entry&gt;
+        </div>
+        <div class="methods">
+            + addEntry(entry: Entry): void
+            <div class="interaction-description">
+                - This method adds an Entry object to the list of entries.
+                - Interaction: Modifies the "entries" attribute.
+            </div>
+            + displayEntries(): void
+            <div class="interaction-description">
+                - This method displays all entries in the journal.
+                - Interaction: Reads from the "entries" attribute.
+            </div>
+            + saveToFile(fileName: String): void
+            <div class="interaction-description">
+                - This method saves the journal to a file with the given fileName.
+                - Interaction: Writes entries from the "entries" attribute to the file.
+            </div>
+            + loadFromFile(fileName: String): void
+            <div class="interaction-description">
+                - This method loads entries from a file with the given fileName.
+                - Interaction: Reads entries from the file and modifies the "entries" attribute.
+            </div>
+        </div>
+        <div class="completion-status">
+            All Journal attributes and behaviors needed for this assignment are defined.
+        </div>
+    </div>
+
+    <div class="class">
+        <div class="class-name">Entry</div>
+        <div class="attributes">
+            - content: String
+            - dateTime: DateTime
+        </div>
+        <div class="methods">
+            + display(): void
+            <div class="interaction-description">
+                - This method displays the content of the entry along with its date and time.
+            </div>
+        </div>
+    </div>
+
+    <div class="class">
+        <div class="class-name">PromptGenerator</div>
+        <div class="attributes">
+            (No attributes)
+        </div>
+        <div class="methods">
+            + generatePrompt(): String
+            <div class="interaction-description">
+                - This method generates a writing prompt for journal entries based on predefined criteria.
+                - The generated prompt may include a topic, question, or inspirational quote.
+                - Prompt generation involves selecting from a database of prompts or generating one algorithmically.
+                - The generated prompt is returned as a string.
+                - Interaction: Retrieves or generates prompts for journal entries.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
