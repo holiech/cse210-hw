@@ -1,78 +1,64 @@
-using System;
+// Fraction.cs
 
-class Fraction
+public class Fraction
 {
-    private int numerator;
-    private int denominator;
+    private int _top;    // Attribute for the top number
+    private int _bottom; // Attribute for the bottom number
 
+    // Constructor with no parameters that initializes the fraction to 1/1
     public Fraction()
     {
-        numerator = 1;
-        denominator = 1;
+        _top = 1;
+        _bottom = 1;
     }
 
+    // Constructor with one parameter for the top number (default denominator to 1)
     public Fraction(int top)
     {
-        numerator = top;
-        denominator = 1;
+        _top = top;
+        _bottom = 1;
     }
 
+    // Constructor with two parameters for both top and bottom numbers
     public Fraction(int top, int bottom)
     {
-        numerator = top;
-        if (bottom != 0)
-        {
-            denominator = bottom;
-        }
-        else
-        {
-            Console.WriteLine("Denominator cannot be zero. Setting denominator to 1.");
-            denominator = 1;
-        }
+        _top = top;
+        _bottom = bottom;
     }
 
-    public int GetNumerator()
+    // Getter for the top number
+    public int GetTop()
     {
-        return numerator;
+        return _top;
     }
 
-    public void SetNumerator(int top)
+    // Setter for the top number
+    public void SetTop(int top)
     {
-        numerator = top;
+        _top = top;
     }
 
-    public int GetDenominator()
+    // Getter for the bottom number
+    public int GetBottom()
     {
-        return denominator;
+        return _bottom;
     }
 
-    public void SetDenominator(int bottom)
+    // Setter for the bottom number
+    public void SetBottom(int bottom)
     {
-        if (bottom != 0)
-        {
-            denominator = bottom;
-        }
-        else
-        {
-            Console.WriteLine("Denominator cannot be zero. Did not change the denominator.");
-        }
+        _bottom = bottom;
     }
 
+    // Method to return the fraction as a string (e.g., "3/4")
     public string GetFractionString()
     {
-        return $"{numerator}/{denominator}";
+        return _top + "/" + _bottom;
     }
 
+    // Method to return the decimal value of the fraction
     public double GetDecimalValue()
     {
-        if (denominator != 0)
-        {
-            return (double)numerator / denominator;
-        }
-        else
-        {
-            Console.WriteLine("Division by zero is undefined. Returning 0.");
-            return 0.0;
-        }
+        return (double)_top / _bottom;
     }
 }
